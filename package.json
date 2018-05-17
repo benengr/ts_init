@@ -1,0 +1,49 @@
+{
+  "name": "ts_start",
+  "version": "1.0.0",
+  "description": "A starting point for Node applications in typescript",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node dist/app.js",
+    "nobuild": "node dist/app.js",
+    "build": "npm run build-ts && npm run tslint",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "test": "jest --forceExit --coverage --verbose",
+    "watch-test": "npm run test -- --watchAll",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benengr/ts_init.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "node",
+    "jest"
+  ],
+  "author": "Ben Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benengr/ts_init/issues"
+  },
+  "homepage": "https://github.com/benengr/ts_init#readme",
+  "dependencies": {
+    "npm": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.6",
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
+    "jest": "^22.0.4",
+    "nodemon": "^1.13.0",
+    "shelljs": "^0.8.1",
+    "supertest": "^3.0.0",
+    "ts-jest": "^22.0.4",
+    "ts-node": "^5.0.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  }
+}
